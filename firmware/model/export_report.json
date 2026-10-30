@@ -1,0 +1,49 @@
+{
+  "input": {
+    "dtype": "int8",
+    "shape": [
+      1,
+      32,
+      32,
+      3
+    ],
+    "scale": 1.0,
+    "zero_point": 0
+  },
+  "output": {
+    "dtype": "int8",
+    "shape": [
+      1,
+      10
+    ],
+    "scale": 0.00390625,
+    "zero_point": -128
+  },
+  "ops": [
+    "ADD",
+    "CONV_2D",
+    "DEPTHWISE_CONV_2D",
+    "FULLY_CONNECTED",
+    "MEAN",
+    "PAD",
+    "SOFTMAX"
+  ],
+  "op_count": 44,
+  "float32_tensors": [],
+  "flash_breakdown": {
+    "total": 136928,
+    "int8_weights": 63680,
+    "int32_biases": 6992,
+    "other_const": 0,
+    "quant_params": 42060,
+    "tensor_names": 10280,
+    "flatbuffer_structure_and_metadata": 13916
+  },
+  "tflite_int8_test_acc": 0.8467,
+  "n_test": 10000,
+  "model_bytes": 136928,
+  "port_check": {
+    "max_abs_logit_diff": 0.5165939331054688,
+    "argmax_agreement": 0.9921875
+  }
+}
